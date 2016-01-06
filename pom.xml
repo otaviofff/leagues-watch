@@ -7,19 +7,28 @@
     <artifactId>leagues</artifactId>
     <version>0.0.1</version>
     <name>Leagues Watch</name>
-    <description>We monitor all major professional sports leagues (MLB, MLS, NBA, NFL, NHL) and notify you as soon as breaking news and scores become available. All that in real time!</description>
+    <description>We monitor all major professional sports leagues (MLB, MLS, NBA, NHL) and notify you as soon as breaking news and scores become available.</description>
+    
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+    
     <dependencies>
-        <dependency>
-            <groupId>org.raviolini</groupId>
-            <artifactId>raviolini</artifactId>
-            <version>0.0.2</version>
-        </dependency>
+	    <dependency>
+	        <groupId>com.github.otaviofff</groupId>
+	        <artifactId>raviolini</artifactId>
+	        <version>0.0.2</version>
+	    </dependency>
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk-sns</artifactId>
             <version>1.10.43</version>
         </dependency>
     </dependencies>
+    
     <build>
         <plugins>
             <plugin>
@@ -33,4 +42,5 @@
             </plugin>
         </plugins>
     </build>
+    
 </project>

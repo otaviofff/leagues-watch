@@ -1,1 +1,1 @@
-web:   java -cp "target/dependency/*":target/classes watch.leagues.api.FrontController
+web:   java -cp target/classes:target/dependency/* watch.leagues.api.FrontController

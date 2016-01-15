@@ -1,7 +1,9 @@
 package watch.leagues.domain;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.AWSCredentialsProviderChain;
 import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
+import com.amazonaws.auth.EnvironmentVariableCredentialsProvider;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.sns.AmazonSNSClient;
@@ -13,13 +15,17 @@ import com.amazonaws.services.sns.model.UnsubscribeRequest;
 
 public class Broker {
 
-    private Region region;
     private AmazonSNSClient client;
-    private AWSCredentialsProvider auth;
     
     public Broker() {
-        region = Region.getRegion(Regions.US_EAST_1);
-        auth = new ClasspathPropertiesFileCredentialsProvider();
+        AWSCredentialsProvider provider1, provider2, auth;
+        
+        provider1 = new ClasspathPropertiesFileCredentialsProvider();
+        provider2 = new EnvironmentVariableCredentialsProvider();
+        auth = new AWSCredentialsProviderChain(provider1, provider2);
+        
+        Region region = Region.getRegion(Regions.US_EAST_1);
+        
         client = new AmazonSNSClient(auth);
         client.setRegion(region);
     }

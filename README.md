@@ -1,5 +1,5 @@
-# Leagues Watch
+# Leagues Watch (API)
 
-This is a proof-of-concept application built on top of AWS SNS (Simple Notification Service).
+We monitor all major professional sports leagues (MLB, MLS, NBA, NHL) and notify you as soon as breaking news and scores become available.
 
-Leagues Watch monitors Canadian teams in Major Leagues, then notify you with breaking news and scores, through Email or SMS.
+This Web application is a proof-of-concept on top of Amazon SNS (Simple Notification Service). But it's pretty useful too =)

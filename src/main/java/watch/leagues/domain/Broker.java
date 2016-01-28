@@ -33,7 +33,7 @@ public class Broker {
     public String publish(News news) {
         PublishRequest request = new PublishRequest(
                 news.getTopic(), 
-                news.getMessage(), 
+                news.getMessage().concat(" More: ").concat(news.getLink()), 
                 news.getSubject()
         );
         

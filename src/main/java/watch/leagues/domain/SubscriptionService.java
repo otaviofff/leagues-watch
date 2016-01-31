@@ -18,7 +18,7 @@ public class SubscriptionService extends EntityService<Subscription> {
             String generatedResourceName = broker.subscribe(subscription);
             subscription.setResource(generatedResourceName);
         } catch (Exception e) {
-            throw new HookExecutionException("Hook failed before method POST.", e);
+            throw new HookExecutionException("Hook failed before method POST. Resource \"Subscription\".", e);
         }
     }
 }

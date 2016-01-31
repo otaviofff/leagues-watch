@@ -18,7 +18,7 @@ public class NewsService extends EntityService<News> {
             String generatedCode = broker.publish(news);
             news.setCode(generatedCode);
         } catch (Exception e) {
-            throw new HookExecutionException("Hook failed before method POST.", e);
+            throw new HookExecutionException("Hook failed before method POST. Resource \"News\".", e);
         }
     }
 }

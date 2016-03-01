@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>watch.leagues</groupId>
     <artifactId>leagues-api</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <name>Leagues Watch API</name>
     <description>We monitor all major professional sports leagues (MLB, MLS, NBA, NHL) and notify you as soon as breaking news and scores become available.</description>
     

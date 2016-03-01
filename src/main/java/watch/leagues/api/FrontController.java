@@ -1,18 +1,18 @@
 package watch.leagues.api;
 
-import org.raviolini.api.AbstractController;
+import org.raviolini.api.Application;
 
 import watch.leagues.domain.News;
 import watch.leagues.domain.NewsService;
 import watch.leagues.domain.Subscription;
 import watch.leagues.domain.SubscriptionService;
 
-public class FrontController extends AbstractController {
+public class FrontController {
 
     public static void main(String[] args) {
-        listenToAssignedPort();
+        Application app = new Application();
         
-        addRouter(News.class, new NewsService());
-        addRouter(Subscription.class, new SubscriptionService());
+        app.addRouter(News.class, new NewsService());
+        app.addRouter(Subscription.class, new SubscriptionService());
     }
 }
